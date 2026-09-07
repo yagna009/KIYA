@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — KIYA</title>
+  <meta name="description" content="Browse KIYA's full collection of natural linen and cotton clothing. Filter by category, colour, fabric, and price.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  Free shipping on all orders &nbsp;·&nbsp; Handcrafted with love &nbsp;·&nbsp; Natural fabrics
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="KIYA Home">
+      <svg class="logo-motif" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M11 1C11 1 3 5.5 3 11C3 16.5 7 20 11 21C15 20 19 16.5 19 11C19 5.5 11 1 11 1Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        <path d="M11 5C11 5 7 8 7 11C7 14 9 16 11 17C13 16 15 14 15 11C15 8 11 5 11 5Z" fill="currentColor" opacity="0.25"/>
+        <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.5"/>
+      </svg>
+      KIYA
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="shop.html" class="active">Shop</a>
+      <a href="shop.html">Collections</a>
+      <a href="about.html">About</a>
+      <a href="about.html#sustainability">Sustainability</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode"></button>
+      <button class="icon-btn cart-btn" aria-label="Your bag">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="icon-btn burger-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="mobile-nav-header">
+    <a href="index.html" class="logo">KIYA</a>
+    <button class="mobile-nav-close">&times;</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="shop.html">Shop</a>
+    <a href="shop.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="about.html#sustainability">Sustainability</a>
+    <a href="cart.html">Your Bag</a>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="icon-btn theme-toggle"></button>
+  </div>
+</nav>
+
+<!-- Cart Drawer -->
+<div id="drawer-overlay"></div>
+<div id="cart-drawer" role="dialog" aria-label="Your shopping bag">
+  <div class="cart-drawer-header">
+    <h2 class="cart-drawer-title">Your Bag</h2>
+    <button class="cart-drawer-close">&times;</button>
+  </div>
+  <div class="cart-drawer-body"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Subtotal</span>
+      <span class="cart-total-amount">₹0</span>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-bottom:12px;">Shipping calculated at checkout</p>
+    <div class="cart-actions">
+      <a href="cart.html" class="btn btn-primary" onclick="closeCartDrawer()">View Bag & Checkout</a>
+      <button class="btn btn-outline" onclick="closeCartDrawer()">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SHOP HERO ═══════════════ -->
+<div class="shop-hero">
+  <div class="container">
+    <p class="section-eyebrow">Our Collection</p>
+    <h1 class="shop-title">Shop</h1>
+  </div>
+</div>
+
+<!-- ═══════════════ SHOP CONTENT ═══════════════ -->
+<div class="container">
+  <!-- Controls Bar -->
+  <div class="shop-controls" style="padding-top:var(--space-xl)">
+    <button class="filter-toggle" id="filter-toggle" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+      </svg>
+      Filters
+    </button>
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="search" id="search-input" placeholder="Search linen, sage, dresses…" aria-label="Search products">
+    </div>
+    <select id="sort-select" aria-label="Sort products">
+      <option value="featured">Featured</option>
+      <option value="newest">New Arrivals</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+    </select>
+  </div>
+
+  <!-- Shop Layout -->
+  <div class="shop-layout">
+
+    <!-- Filter Panel -->
+    <aside class="filter-panel" id="filter-panel" aria-label="Product filters">
+
+      <!-- Category -->
+      <div class="filter-section">
+        <p class="filter-title">Category</p>
+        <div class="filter-chips">
+          <button class="filter-chip" data-filter="category" data-value="Dresses">Dresses</button>
+          <button class="filter-chip" data-filter="category" data-value="Tops">Tops</button>
+          <button class="filter-chip" data-filter="category" data-value="Skirts">Skirts</button>
+          <button class="filter-chip" data-filter="category" data-value="Handcrafted">Handcrafted</button>
+        </div>
+      </div>
+
+      <!-- Size -->
+      <div class="filter-section">
+        <p class="filter-title">Size</p>
+        <div class="filter-chips">
+          <button class="filter-chip" data-filter="size" data-value="S">S</button>
+          <button class="filter-chip" data-filter="size" data-value="M">M</button>
+          <button class="filter-chip" data-filter="size" data-value="L">L</button>
+          <button class="filter-chip" data-filter="size" data-value="XL">XL</button>
+        </div>
+      </div>
+
+      <!-- Color -->
+      <div class="filter-section">
+        <p class="filter-title">Colour</p>
+        <div class="filter-chips">
+          <button class="filter-chip" data-filter="color" data-value="Sage">Sage</button>
+          <button class="filter-chip" data-filter="color" data-value="Blush">Blush</button>
+          <button class="filter-chip" data-filter="color" data-value="Ivory">Ivory</button>
+          <button class="filter-chip" data-filter="color" data-value="Terracotta">Terracotta</button>
+          <button class="filter-chip" data-filter="color" data-value="Olive">Olive</button>
+          <button class="filter-chip" data-filter="color" data-value="Natural">Natural</button>
+        </div>
+      </div>
+
+      <!-- Fabric -->
+      <div class="filter-section">
+        <p class="filter-title">Fabric</p>
+        <div class="filter-chips">
+          <button class="filter-chip" data-filter="fabric" data-value="Linen">Linen</button>
+          <button class="filter-chip" data-filter="fabric" data-value="Organic Cotton">Organic Cotton</button>
+          <button class="filter-chip" data-filter="fabric" data-value="Cotton">Cotton</button>
+          <button class="filter-chip" data-filter="fabric" data-value="Handwoven">Handwoven</button>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-section">
+        <p class="filter-title">Price Range</p>
+        <div class="price-range-wrap">
+          <input type="range" id="price-range" min="999" max="2499" value="2499" step="100" aria-label="Maximum price">
+          <p id="price-display">₹999 – ₹2,499</p>
+        </div>
+      </div>
+
+      <button class="filter-reset" onclick="resetFilters()">Clear all filters</button>
+
+    </aside>
+
+    <!-- Product Grid -->
+    <main class="shop-main">
+      <p class="result-count" id="result-count"></p>
+      <div id="shop-grid" aria-label="Products">
+        <!-- Populated by shop.js -->
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer" style="margin-top:var(--space-3xl)">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">KIYA</a>
+        <p class="footer-tagline">Women's fashion rooted in nature, crafted with care.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="Pinterest">pt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="shop.html">New Arrivals</a></li>
+          <li><a href="shop.html?category=Dresses">Dresses</a></li>
+          <li><a href="shop.html?category=Tops">Tops</a></li>
+          <li><a href="shop.html?category=Skirts">Skirts</a></li>
+          <li><a href="shop.html?category=Handcrafted">Handcrafted</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="about.html">About KIYA</a></li>
+          <li><a href="about.html#sustainability">Sustainability</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Customer Care</h5>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 KIYA. This is a demo website.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+<script src="js/shop.js"></script>
+
+<script>
+// Handle URL params for pre-filtering
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get('category');
+  const collection = params.get('collection');
+
+  if (category) {
+    const chip = document.querySelector(`[data-filter="category"][data-value="${category}"]`);
+    if (chip) chip.click();
+  }
+  if (collection) {
+    // Map URL collection param to collection name
+    const map = { everyday: 'The Everyday Edit', natural: 'Natural Fabrics', artisan: 'The Artisan Edit' };
+    if (map[collection]) {
+      // Simulate collection filter via search
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.value = map[collection];
+        searchInput.dispatchEvent(new Event('input'));
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

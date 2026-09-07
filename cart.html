@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Bag — KIYA</title>
+  <meta name="description" content="View your bag and proceed to checkout. KIYA — Made With Nature.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  Free shipping on all orders &nbsp;·&nbsp; Natural fabrics &nbsp;·&nbsp; Handcrafted with love
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="KIYA Home">
+      <svg class="logo-motif" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M11 1C11 1 3 5.5 3 11C3 16.5 7 20 11 21C15 20 19 16.5 19 11C19 5.5 11 1 11 1Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        <path d="M11 5C11 5 7 8 7 11C7 14 9 16 11 17C13 16 15 14 15 11C15 8 11 5 11 5Z" fill="currentColor" opacity="0.25"/>
+        <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.5"/>
+      </svg>
+      KIYA
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="shop.html">Shop</a>
+      <a href="shop.html">Collections</a>
+      <a href="about.html">About</a>
+      <a href="about.html#sustainability">Sustainability</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode"></button>
+      <button class="icon-btn cart-btn" aria-label="Your bag">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-badge" style="display:none">0</span>
+      </button>
+      <button class="icon-btn burger-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav id="mobile-nav">
+  <div class="mobile-nav-header">
+    <a href="index.html" class="logo">KIYA</a>
+    <button class="mobile-nav-close">&times;</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="shop.html">Shop</a>
+    <a href="shop.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="cart.html">Your Bag</a>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="icon-btn theme-toggle"></button>
+  </div>
+</nav>
+
+<!-- Cart Drawer (for the cart-btn in header) -->
+<div id="drawer-overlay"></div>
+<div id="cart-drawer" role="dialog" aria-label="Your shopping bag">
+  <div class="cart-drawer-header">
+    <h2 class="cart-drawer-title">Your Bag</h2>
+    <button class="cart-drawer-close">&times;</button>
+  </div>
+  <div class="cart-drawer-body"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Subtotal</span>
+      <span class="cart-total-amount">₹0</span>
+    </div>
+    <div class="cart-actions">
+      <a href="cart.html" class="btn btn-primary" onclick="closeCartDrawer()">View Bag & Checkout</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CART PAGE ═══════════════ -->
+<div id="cart-page" class="container">
+  <div class="cart-page-layout">
+
+    <!-- Cart Items -->
+    <div>
+      <h1 class="cart-page-title">Your Bag</h1>
+      <div id="cart-items-container">
+        <!-- Populated by app.js -->
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div id="cart-summary" style="display:none">
+      <div class="cart-summary-card">
+        <h2 class="cart-summary-title">Order Summary</h2>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cart-page-total">₹0</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span style="color:var(--sage)">Free</span>
+        </div>
+        <div class="summary-row">
+          <span>Taxes</span>
+          <span>Included</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="cart-page-total-2">₹0</span>
+        </div>
+        <div style="margin-top:var(--space-xl)">
+          <button class="btn btn-primary btn-full" onclick="showCheckout()">Proceed to Checkout</button>
+        </div>
+        <div style="margin-top:var(--space-md)">
+          <a href="shop.html" class="btn btn-outline btn-full">Continue Shopping</a>
+        </div>
+        <div style="margin-top:var(--space-xl);text-align:center">
+          <p style="font-size:0.75rem;color:var(--text-light)">🔒 Secure demo checkout · No real payments</p>
+          <div style="display:flex;justify-content:center;gap:var(--space-md);margin-top:var(--space-md);font-size:0.75rem;color:var(--text-light)">
+            <span>🌿 Natural fabrics</span>
+            <span>✦ Artisan made</span>
+            <span>📦 Free shipping</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ CHECKOUT SECTION ═══════════════ -->
+<div class="container checkout-section" id="checkout-section" style="display:none">
+
+  <!-- Step Indicators -->
+  <div class="checkout-steps">
+    <div class="step-indicator active" data-step="1">
+      <span class="step-num">1</span>
+      <span>Information</span>
+    </div>
+    <span class="step-sep">›</span>
+    <div class="step-indicator" data-step="2">
+      <span class="step-num">2</span>
+      <span>Delivery</span>
+    </div>
+    <span class="step-sep">›</span>
+    <div class="step-indicator" data-step="3">
+      <span class="step-num">3</span>
+      <span>Review</span>
+    </div>
+    <span class="step-sep">›</span>
+    <div class="step-indicator" data-step="4">
+      <span class="step-num">4</span>
+      <span>Confirm</span>
+    </div>
+  </div>
+
+  <div class="checkout-layout">
+
+    <!-- Left: Steps -->
+    <div>
+
+      <!-- Step 1: Customer Info -->
+      <div class="checkout-step active" id="step-1">
+        <div class="checkout-card">
+          <h3>Contact Information</h3>
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label class="form-label" for="email">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fname">First Name</label>
+              <input type="text" id="fname" class="form-input" placeholder="Priya">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last Name</label>
+              <input type="text" id="lname" class="form-input" placeholder="Sharma">
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-input" placeholder="+91 9876 543 210">
+            </div>
+          </div>
+        </div>
+        <div class="checkout-nav">
+          <button class="btn btn-primary" onclick="checkoutNext()">Continue to Delivery →</button>
+          <button class="btn btn-outline" onclick="hideCheckout()">← Back to Bag</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Delivery -->
+      <div class="checkout-step" id="step-2">
+        <div class="checkout-card">
+          <h3>Delivery Address</h3>
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label class="form-label" for="address">Street Address</label>
+              <input type="text" id="address" class="form-input" placeholder="House / Flat No., Street Name">
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label" for="address2">Apartment, Suite (optional)</label>
+              <input type="text" id="address2" class="form-input" placeholder="Apartment, Building, Colony">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">City</label>
+              <input type="text" id="city" class="form-input" placeholder="Mumbai">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="state">State</label>
+              <input type="text" id="state" class="form-input" placeholder="Maharashtra">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pin">PIN Code</label>
+              <input type="text" id="pin" class="form-input" placeholder="400 001">
+            </div>
+          </div>
+        </div>
+        <div class="checkout-card" style="margin-top:0">
+          <h3>Delivery Method</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--space-sm)">
+            <label style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);border:1.5px solid var(--sage);border-radius:var(--radius-md);cursor:pointer;background:var(--bg-alt)">
+              <input type="radio" name="delivery" checked style="accent-color:var(--sage)">
+              <div>
+                <p style="font-weight:500;color:var(--text);font-size:0.9rem">Standard Delivery</p>
+                <p style="font-size:0.78rem;color:var(--text-light)">5–7 business days</p>
+              </div>
+              <span style="margin-left:auto;color:var(--sage);font-weight:600">Free</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);border:1.5px solid var(--border);border-radius:var(--radius-md);cursor:pointer">
+              <input type="radio" name="delivery" style="accent-color:var(--sage)">
+              <div>
+                <p style="font-weight:500;color:var(--text);font-size:0.9rem">Express Delivery</p>
+                <p style="font-size:0.78rem;color:var(--text-light)">2–3 business days</p>
+              </div>
+              <span style="margin-left:auto;font-weight:600">₹99</span>
+            </label>
+          </div>
+        </div>
+        <div class="checkout-nav">
+          <button class="btn btn-primary" onclick="checkoutNext()">Review Order →</button>
+          <button class="btn btn-outline" onclick="checkoutBack()">← Back</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Review -->
+      <div class="checkout-step" id="step-3">
+        <div class="checkout-card">
+          <h3>Review Your Order</h3>
+          <div id="checkout-cart-summary">
+            <!-- Populated by app.js -->
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:var(--space-lg);border-top:1px solid var(--border);margin-top:var(--space-md)">
+            <span style="font-weight:600;color:var(--text)">Order Total</span>
+            <span style="font-size:1.1rem;font-weight:600;color:var(--text)" id="checkout-total">₹0</span>
+          </div>
+        </div>
+        <div class="checkout-card" style="margin-top:0">
+          <h3>Payment</h3>
+          <div style="background:var(--bg-alt);border-radius:var(--radius-md);padding:var(--space-xl);text-align:center">
+            <div style="font-size:2rem;margin-bottom:var(--space-md)">🔒</div>
+            <p style="font-size:0.88rem;color:var(--text-mid);margin-bottom:var(--space-sm)"><strong style="color:var(--text)">Demo Mode</strong></p>
+            <p style="font-size:0.82rem;color:var(--text-light)">This is a sample checkout. No real payment will be processed. Click "Place Order" to see the confirmation screen.</p>
+          </div>
+        </div>
+        <div class="checkout-nav">
+          <button class="btn btn-primary" onclick="placeOrder()">Place Demo Order ✓</button>
+          <button class="btn btn-outline" onclick="checkoutBack()">← Back</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Confirmation -->
+      <div class="checkout-step" id="step-4">
+        <div id="order-confirm" class="order-confirm checkout-card">
+          <div class="confirm-icon">🎉</div>
+          <h2>Thank you for choosing KIYA.</h2>
+          <p style="color:var(--text-mid)">Your demo order has been placed.</p>
+          <div class="order-number-display">
+            Order #<span class="order-number">KY000000</span>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:var(--space-xl)">
+            A confirmation would be sent to your email in a real order.<br>
+            Thank you for exploring KIYA. 🌿
+          </p>
+          <div style="display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap">
+            <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+            <a href="index.html" class="btn btn-outline">Back to Home</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Order Summary -->
+    <div>
+      <div class="cart-summary-card">
+        <h2 class="cart-summary-title">Your Order</h2>
+        <div id="checkout-sidebar-items">
+          <!-- Will be populated -->
+        </div>
+        <div class="summary-row" style="margin-top:var(--space-md)">
+          <span>Subtotal</span>
+          <span id="checkout-sidebar-total">₹0</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span style="color:var(--sage)">Free</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="checkout-sidebar-grand">₹0</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 KIYA. This is a demo website. No real transactions occur.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+function showCheckout() {
+  document.getElementById('cart-page').style.display = 'none';
+  document.getElementById('checkout-section').style.display = 'block';
+
+  // Populate sidebar
+  const cart = getCart();
+  const sidebarItems = document.getElementById('checkout-sidebar-items');
+  if (sidebarItems) {
+    sidebarItems.innerHTML = cart.map(item => `
+      <div class="checkout-item">
+        <img src="${item.image}" alt="${item.name}" class="checkout-item-img">
+        <div>
+          <p class="checkout-item-name">${item.name}</p>
+          <p class="checkout-item-meta">${item.size} · ${item.color} × ${item.qty}</p>
+        </div>
+        <p class="checkout-item-price">${formatPrice(item.price * item.qty)}</p>
+      </div>`).join('');
+  }
+  const total = getCartTotal();
+  const el = document.getElementById('checkout-sidebar-total');
+  const el2 = document.getElementById('checkout-sidebar-grand');
+  if (el) el.textContent = formatPrice(total);
+  if (el2) el2.textContent = formatPrice(total);
+
+  // Also populate the review step cart
+  const reviewItems = document.getElementById('checkout-cart-summary');
+  if (reviewItems) {
+    reviewItems.innerHTML = cart.map(item => `
+      <div class="checkout-item">
+        <img src="${item.image}" alt="${item.name}" class="checkout-item-img">
+        <div>
+          <p class="checkout-item-name">${item.name}</p>
+          <p class="checkout-item-meta">${item.size} · ${item.color} × ${item.qty}</p>
+        </div>
+        <p class="checkout-item-price">${formatPrice(item.price * item.qty)}</p>
+      </div>`).join('');
+  }
+  const checkTotal = document.getElementById('checkout-total');
+  if (checkTotal) checkTotal.textContent = formatPrice(total);
+
+  initCheckout();
+}
+
+function hideCheckout() {
+  document.getElementById('cart-page').style.display = 'block';
+  document.getElementById('checkout-section').style.display = 'none';
+}
+</script>
+
+</body>
+</html>

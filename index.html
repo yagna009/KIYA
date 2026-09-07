@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIYA — Made With Nature</title>
+  <meta name="description" content="KIYA is a women's fashion boutique celebrating natural fabrics, artisan craftsmanship, and sustainable style. Linen, cotton, and handcrafted pieces from ₹999.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  Free shipping on all orders &nbsp;·&nbsp; Handcrafted with love &nbsp;·&nbsp; Natural fabrics
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo" aria-label="KIYA Home">
+      <svg class="logo-motif" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M11 1C11 1 3 5.5 3 11C3 16.5 7 20 11 21C15 20 19 16.5 19 11C19 5.5 11 1 11 1Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        <path d="M11 5C11 5 7 8 7 11C7 14 9 16 11 17C13 16 15 14 15 11C15 8 11 5 11 5Z" fill="currentColor" opacity="0.25"/>
+        <circle cx="11" cy="11" r="2" fill="currentColor" opacity="0.5"/>
+      </svg>
+      KIYA
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="shop.html">Shop</a>
+      <a href="shop.html?collection=everyday">Collections</a>
+      <a href="about.html">About</a>
+      <a href="about.html#sustainability">Sustainability</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode"></button>
+      <a href="cart.html" class="icon-btn cart-btn" aria-label="Your bag">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-badge" style="display:none">0</span>
+      </a>
+      <button class="icon-btn burger-btn" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="mobile-nav-header">
+    <a href="index.html" class="logo">KIYA</a>
+    <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="shop.html">Shop</a>
+    <a href="shop.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="about.html#sustainability">Sustainability</a>
+    <a href="cart.html">Your Bag</a>
+  </div>
+  <div class="mobile-nav-footer">
+    <button class="icon-btn theme-toggle" aria-label="Toggle dark mode"></button>
+  </div>
+</nav>
+
+<!-- Cart Drawer -->
+<div id="drawer-overlay"></div>
+<div id="cart-drawer" role="dialog" aria-label="Your shopping bag">
+  <div class="cart-drawer-header">
+    <h2 class="cart-drawer-title">Your Bag</h2>
+    <button class="cart-drawer-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-drawer-body"></div>
+  <div class="cart-drawer-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Subtotal</span>
+      <span class="cart-total-amount">₹0</span>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-bottom:12px;">Shipping calculated at checkout</p>
+    <div class="cart-actions">
+      <a href="cart.html" class="btn btn-primary" onclick="closeCartDrawer()">View Bag & Checkout</a>
+      <button class="btn btn-outline" onclick="closeCartDrawer()">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero-section" id="hero-section" aria-label="Hero">
+
+  <div class="hero-panel">
+    <img src="images/hero/hero-2.jpg" alt="Model in blush linen top in garden courtyard" loading="eager">
+    <div class="hero-panel-overlay"></div>
+  </div>
+
+  <div class="hero-panel">
+    <img src="images/hero/hero-1.jpg" alt="Model in sage green linen dress in sunlit garden" loading="eager">
+    <div class="hero-panel-overlay"></div>
+    <div class="hero-center-content">
+      <p class="hero-tagline">Made With Nature</p>
+      <h1 class="hero-brand">KIYA</h1>
+      <a href="shop.html" class="btn btn-outline-light">Explore Collection</a>
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <img src="images/hero/hero-3.jpg" alt="Model in embroidered ivory skirt in wildflower meadow" loading="eager">
+    <div class="hero-panel-overlay"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════ NEW ARRIVALS ═══════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <p class="section-eyebrow">Just In</p>
+      <h2 class="section-title">New Arrivals</h2>
+      <p class="section-subtitle">Crafted with intention. Designed for everyday life.</p>
+    </div>
+    <div class="products-grid" id="new-arrivals-grid">
+      <!-- Populated by app.js -->
+    </div>
+    <div class="view-all-wrap">
+      <a href="shop.html" class="view-all-link">View All Products &nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ COLLECTIONS ═══════════════ -->
+<section class="section section-alt" style="background:var(--bg-alt);transition:background var(--t-slow) var(--ease);">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Curated For You</p>
+      <h2 class="section-title">Our Collections</h2>
+    </div>
+    <div class="collections-grid">
+
+      <div class="collection-card reveal" onclick="window.location='shop.html?collection=everyday'">
+        <img src="images/collection-everyday.jpg" alt="The Everyday Edit — women in natural linen outfits" loading="lazy">
+        <div class="collection-card-overlay">
+          <p class="collection-card-label">Collection</p>
+          <h3 class="collection-card-name">The Everyday Edit</h3>
+          <span class="collection-card-link">Explore →</span>
+        </div>
+      </div>
+
+      <div class="collection-card reveal" style="transition-delay:.1s" onclick="window.location='shop.html?collection=natural'">
+        <img src="images/collection-natural.jpg" alt="Natural Fabrics — linen and cotton textiles" loading="lazy">
+        <div class="collection-card-overlay">
+          <p class="collection-card-label">Collection</p>
+          <h3 class="collection-card-name">Natural Fabrics</h3>
+          <span class="collection-card-link">Explore →</span>
+        </div>
+      </div>
+
+      <div class="collection-card reveal" style="transition-delay:.2s" onclick="window.location='shop.html?collection=artisan'">
+        <img src="images/collection-artisan.jpg" alt="The Artisan Edit — handcrafted embroidered pieces" loading="lazy">
+        <div class="collection-card-overlay">
+          <p class="collection-card-label">Collection</p>
+          <h3 class="collection-card-name">The Artisan Edit</h3>
+          <span class="collection-card-link">Explore →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SUSTAINABILITY ═══════════════ -->
+<section class="section sustainability-section" id="sustainability">
+  <div class="container">
+    <div class="sustainability-inner">
+      <div class="sustainability-content reveal">
+        <p class="section-eyebrow">Made With Intention</p>
+        <h2 class="section-title">Less Waste.<br>More Meaning.</h2>
+        <p>At KIYA, every piece begins with a question: can it be made more thoughtfully? We choose natural fibres, honour traditional craft, and design for longevity — not seasons.</p>
+        <div class="sustain-pillars">
+          <div class="sustain-pillar">
+            <div class="sustain-pillar-icon">🌱</div>
+            <h4>Natural Fibres</h4>
+            <p>Linen, organic cotton, and handwoven cloth. Nothing synthetic.</p>
+          </div>
+          <div class="sustain-pillar">
+            <div class="sustain-pillar-icon">🤲</div>
+            <h4>Artisan Made</h4>
+            <p>Crafted by skilled hands using traditional Indian techniques.</p>
+          </div>
+          <div class="sustain-pillar">
+            <div class="sustain-pillar-icon">💧</div>
+            <h4>Low-Impact Dyes</h4>
+            <p>Plant-based and low-water dyeing processes where possible.</p>
+          </div>
+          <div class="sustain-pillar">
+            <div class="sustain-pillar-icon">🔄</div>
+            <h4>Designed to Last</h4>
+            <p>Timeless silhouettes that transcend trends and seasons.</p>
+          </div>
+        </div>
+        <div style="margin-top:var(--space-2xl)">
+          <a href="about.html#sustainability" class="btn btn-outline">Our Story</a>
+        </div>
+      </div>
+      <div class="sustainability-image reveal" style="transition-delay:.15s">
+        <img src="images/about.jpg" alt="Artisan examining handwoven linen fabric">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo">KIYA</a>
+        <p class="footer-tagline">Women's fashion rooted in nature, crafted with care. Natural fabrics. Artisan details. Affordable beauty.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="Pinterest">pt</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="shop.html">New Arrivals</a></li>
+          <li><a href="shop.html?category=Dresses">Dresses</a></li>
+          <li><a href="shop.html?category=Tops">Tops</a></li>
+          <li><a href="shop.html?category=Skirts">Skirts</a></li>
+          <li><a href="shop.html?category=Handcrafted">Handcrafted</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="shop.html?collection=everyday">Everyday Edit</a></li>
+          <li><a href="shop.html?collection=natural">Natural Fabrics</a></li>
+          <li><a href="shop.html?collection=artisan">Artisan Edit</a></li>
+          <li><a href="about.html">About KIYA</a></li>
+          <li><a href="about.html#sustainability">Sustainability</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Customer Care</h5>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 KIYA. All rights reserved. This is a demo website.</p>
+      <div class="flex gap-md">
+        <button class="icon-btn theme-toggle" aria-label="Toggle dark mode"></button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
